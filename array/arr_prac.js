@@ -231,7 +231,26 @@
 //         return maxsum;
 // }
 
-// console.log(largestsubarray([1,1,1,2,2,2,3,3,4,4,5]));
+// console.log(largestsubarray([1,2,3,4,5]));
 
 
 
+
+
+function largestSubarray(arr) {
+        let sum = 0;
+        let maxSum = arr[0];
+    
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (sum > maxSum) {
+                maxSum = sum;
+            }
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        return maxSum;
+    }
+    
+    console.log(largestSubarray([1, 2, 3, 4, 5])); // Output: 15

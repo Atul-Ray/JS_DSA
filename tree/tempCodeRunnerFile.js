@@ -1,0 +1,1 @@
+bst1.Insert(7);

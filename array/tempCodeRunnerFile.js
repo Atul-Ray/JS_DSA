@@ -1,15 +1,21 @@
-function removeduplicateNew(arr){
+function largestsubarray(arr){
+ 
+        let sum=0
+        let maxsum=arr[0]
 
-   let i=0
-
-    for(let j=1;j<arr.length;j++){
-        if(arr[i]!==arr[j]){
-           i++
-           arr[i]=arr[j]     
+        for(i=0;i<arr.length;i++){
+                sum+=arr[i]
+                if(sum>maxsum){
+                        maxsum=sum;
+                }
+                if(sum<maxsum){
+                        sum=0;
+                }
         }
+        return maxsum;
+}
 
-        }
-   
-  }
+console.log(largestsubarray([1,2,3,4,5]));
 
-  console.log(removeduplicateNew([1,1,1,2,2,2,3,3,4,4,5]));
+
+
